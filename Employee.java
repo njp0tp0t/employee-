@@ -22,8 +22,8 @@ public class Employee{
         hourlyWage = wage;
     }
     public double hourlyPay(){
-        hourlyWage = hourlyPay;
-        return hourlyPay;
+        hourlyWage = hourlyPay();
+        return hourlyPay();
     }
     /**
      * Returns true is an employee is above 16 years old
@@ -37,13 +37,16 @@ public class Employee{
      */
     public boolean canDrive(){
         int age = calculateAge(2025);
-        if(age=> 16){
+        if(age >= 16){
             System.out.println("You can drive");
+            return true;
         }
         else{
             System.out.println("You must wait" + (16 - age) + "years to start driving");
+            return false;
         }
         // to be completed
+        
     }
 
     /*
@@ -51,11 +54,12 @@ public class Employee{
      */
     private double calculatePay(){
         // to be completed
-        pay = calculatePay();
+        double pay;
         pay = unpaidHours * hourlyWage;
-        taxesAnddeduction = 30%;
-        payAfterTaxes = pay;
-        payAfterTaxes = pay - taxesAnddeduction;
+        int taxesAndDeduction = 30;
+        double payAfterTaxes;
+        payAfterTaxes = pay - taxesAndDeduction;
+        return payAfterTaxes;
     }
 
     /*
@@ -63,9 +67,9 @@ public class Employee{
      */
     public void paySalary(){
         // to be completed
-        pay = calculatePay();
-        if(pay = > 0){
-            System.out.println(fullname + "has received a wire transfer of" + pay + "CAD");
+        
+        if(calculatePay() >= 0){
+            System.out.println("bro");
             unpaidHours = 0.0;
         }
         
