@@ -18,7 +18,13 @@ public class Employee{
         onLeave = false;
         unpaidHours = 0.0;
     }
-    
+    public void wagePerHour(double wage){
+        hourlyWage = wage;
+    }
+    public double hourlyPay(){
+        hourlyWage = hourlyPay;
+        return hourlyPay;
+    }
     /**
      * Returns true is an employee is above 16 years old
      */
@@ -31,6 +37,12 @@ public class Employee{
      */
     public boolean canDrive(){
         int age = calculateAge(2025);
+        if(age=> 16){
+            System.out.println("You can drive");
+        }
+        else{
+            System.out.println("You must wait" + (16 - age) + "years to start driving");
+        }
         // to be completed
     }
 
@@ -39,6 +51,11 @@ public class Employee{
      */
     private double calculatePay(){
         // to be completed
+        pay = calculatePay();
+        pay = unpaidHours * hourlyWage;
+        taxesAnddeduction = 30%;
+        payAfterTaxes = pay;
+        payAfterTaxes = pay - taxesAnddeduction;
     }
 
     /*
@@ -46,5 +63,11 @@ public class Employee{
      */
     public void paySalary(){
         // to be completed
+        pay = calculatePay();
+        if(pay = > 0){
+            System.out.println(fullname + "has received a wire transfer of" + pay + "CAD");
+            unpaidHours = 0.0;
+        }
+        
     }
 }
