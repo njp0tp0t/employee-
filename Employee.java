@@ -54,12 +54,11 @@ public class Employee{
      */
     private double calculatePay(){
         // to be completed
-        double pay;
-        pay = unpaidHours * hourlyWage;
-        int taxesAndDeduction = 30;
-        double payAfterTaxes;
-        payAfterTaxes = pay - taxesAndDeduction;
+        double pay = unpaidHours * hourlyWage;
+        double taxRate = 0.30;
+        double payAfterTaxes = pay - (pay * taxRate);
         return payAfterTaxes;
+        
     }
 
     /*
@@ -67,9 +66,9 @@ public class Employee{
      */
     public void paySalary(){
         // to be completed
-        
-        if(calculatePay() >= 0){
-            System.out.println("bro");
+        double amount = calculatePay();
+        if(amount > 0){
+            System.out.println(fullname + "has received a deposit of" + amount + "CAD");
             unpaidHours = 0.0;
         }
         
